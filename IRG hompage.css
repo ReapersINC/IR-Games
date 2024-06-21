@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family:'MetalFont';
+    src: url(MetalMania-Regular.ttf);
+}
+
+body {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}
+
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+    font-family: MetalFont;
+    font-size: 40;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-content: center;
+    color: black;
+}
+
+nav a:hover{
+    background-color: white;
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.289);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menu-button{
+    display: none;
+}
+
+.menu-button a:hover{
+    color: #880808;
+}
+
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 25%;
+    background: black;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.289);
+    backdrop-filter: blur(10px);
+}
+
+ul li a:hover {
+    color: #880808;
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+p {
+    font-weight: normal;
+}
+
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
